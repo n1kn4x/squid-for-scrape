@@ -1,15 +1,14 @@
-FROM ubuntu:16.04
+FROM alpine:3.11
 
 MAINTAINER Niklas Pirnay <niklas@pirnay.com>
 
-RUN apt-get -qqy update
-RUN apt-get -qqy upgrade
-RUN apt-get -qqy install apache2-utils squid3
+RUN apk add squid
+RUN apk add apache2-utils
 RUN mkdir /usr/etc
-RUN mkdir -p /etc/squid3/
+RUN mkdir -p /etc/squid/
 
 EXPOSE 3128
-VOLUME /var/log/squid3
+VOLUME /var/log/squid
 
 ADD init /init
 #replace the squid config file

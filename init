@@ -1,9 +1,4 @@
 #!/bin/sh
-htpasswd -bc /etc/squid3/users "${SQUID_USERNAME}" "${SQUID_PASSWORD}"
-CHOWN=$(/usr/bin/which chown)
-SQUID=$(/usr/bin/which squid)
-"$CHOWN" -R proxy:proxy /var/log/squid
-"$CHOWN" -R proxy:proxy /var/spool/squid
-"$CHOWN" -R proxy:proxy /var/log/squid3
+htpasswd -bc /etc/squid/users "${SQUID_USERNAME}" "${SQUID_PASSWORD}"
 
-exec squid3 -N $*
+exec squid -N $*
