@@ -1,9 +1,11 @@
-squid-docker-simple-auth
+squid-for-scrape
 ========================
 
 A simple Dockerfile for launching an authenticated squid proxy.
+
 Some squid config modifications were taken to ensure privacy of clients.
-Scraping search engines with several deployments of this proxy works well.
+
+Possible use cases are several deployments for search engine scraping.
 
 The user must specify authentication credentials via the following environment variables:
 
