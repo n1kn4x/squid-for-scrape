@@ -1,7 +1,9 @@
 squid-docker-simple-auth
 ========================
 
-A simple (and fragile) Dockerfile for launching an authenticated squid proxy.
+A simple Dockerfile for launching an authenticated squid proxy.
+Some squid config modifications were taken to ensure privacy of clients.
+Scraping search engines with several deployments of this proxy works well.
 
 The user must specify authentication credentials via the following environment variables:
 
@@ -13,7 +15,7 @@ SQUID_PASSWORD=bar
 An example invocation would be:
 
 ```
-docker run -e SQUID_USERNAME=foo -e SQUID_PASSWORD=bar -p 3128:3128 robhaswell/squid-authenticated
+docker run -e SQUID_USERNAME=foo -e SQUID_PASSWORD=bar -p 3128:3128 n1kn4x/squid-for-scrape
 ```
 
 With some added performance improvements and transparency settings.
